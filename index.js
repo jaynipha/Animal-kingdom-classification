@@ -1,6 +1,7 @@
 class Animal {
 	name;
 	skeletonType;
+
 	/////ABSTRACTION
 
 	constructor(name) {
@@ -20,9 +21,9 @@ class Animal {
 	}
 }
 
-//INHERTIANCE.EXENDS CONNOTES INHERITANCE
+//INHERTIANCE - "EXTENDS" CONNOTES INHERITANCE
 
-class Invertebrae extends Animal {
+class Invertebrate extends Animal {
 	skeletonType = 'Exoskeleton';
 
 	constructor(name) {
@@ -32,7 +33,7 @@ class Invertebrae extends Animal {
 	//ENCAPSULATION
 
 	#molt() {
-		if (Object.getPrototypeOf(this === Invertebrae)) {
+		if (Object.getPrototypeOf(this === Invertebrate)) {
 			return 'I am going to shed my skin';
 		}
 	}
@@ -42,7 +43,7 @@ class Invertebrae extends Animal {
 	}
 
 	withBackbone() {
-		if (this.constructor === Invertebrae) {
+		if (this.constructor === Invertebrate) {
 			return false;
 		} else {
 			return true;
@@ -50,12 +51,12 @@ class Invertebrae extends Animal {
 	}
 }
 
-class Vertebrae extends Animal {
+class Vertebrate extends Animal {
 	skeletonType = 'Endoskeleton';
 
 	constructor(name) {
 		super(name);
-		if (this.constructor === Vertebrae) {
+		if (this.constructor === Vertebrate) {
 			throw new Error("You can't instantiate this class");
 		}
 	}
@@ -65,13 +66,13 @@ class Vertebrae extends Animal {
 	}
 }
 
-class ColdBlooded extends Vertebrae {
+class ColdBlooded extends Vertebrate {
 	constructor(name) {
 		super(name);
 	}
 }
 
-class WarmBlooded extends Vertebrae {
+class WarmBlooded extends Vertebrate {
 	constructor(name) {
 		super(name);
 	}
@@ -82,7 +83,7 @@ class WarmBlooded extends Vertebrae {
 	}
 }
 
-class Anthropoda extends Invertebrae {
+class Anthropoda extends Invertebrate {
 	constructor(name) {
 		super(name);
 	}
@@ -237,7 +238,7 @@ console.log("Let's try to test out inheritance");
 console.log(
 	"The Animal class has general property 'move' which can be inherited by its subclasses"
 );
-let insect = new Invertebrae('titus');
+let insect = new Invertebrate('titus');
 console.log(`I am an insect object and ${insect.move()}`);
 
 //ENCAPSULATION

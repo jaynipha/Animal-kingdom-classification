@@ -1,5 +1,7 @@
 # Animal-kingdom-classification
 
+This is a classification of the animal kingdom applying all 4 principles of object-oriented programming.
+
 The keyword "exends" shows INHERITANCE and it can be seen all over the work clearly.
 
 The base class is the animal class and it is an ABSTRACTION class that cannot be instantiated.
